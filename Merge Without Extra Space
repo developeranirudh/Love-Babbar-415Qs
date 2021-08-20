@@ -1,0 +1,61 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+Uss Solution{
+public:
+	void merge(int arr1[], int arr2[], int n, int m) {
+	    int n1=n+m,i;
+	    n1=n1;
+	  int n2=n;
+	    int arr3[n1];
+	    for(i=0;i<n;i++)
+	    {
+	        arr3[i]=arr1[i];
+	    }
+	    m=m-1;
+	   // cout<<arr2[2]<<endl;
+	    long long int j=0;
+	    for(i=0;i<=m;i++)
+	    {  
+	        arr3[n2]=arr2[i];
+	        n2++;
+	    }  
+	    sort(arr3,arr3+n1);
+	    for(i=0;i<n;i++)
+	    {
+	        arr1[i]=arr3[i];
+	    }
+	   // int j=0;
+	    for(i=n;i<n1;i++)
+	    {
+	        arr2[j]=arr3[i];
+	        j++;
+	    }
+	   // cout<<endl;
+	}
+};
+int main() {
+    int t;
+    cin >> t;
+    while (t--) {
+        int n, m, i;
+        cin >> n >> m;
+        int arr1[n], arr2[m];
+        for (i = 0; i < n; i++) {
+            cin >> arr1[i];
+        }
+        for (i = 0; i < m; i++) {
+            cin >> arr2[i];
+        }
+        Solution ob;
+        ob.merge(arr1, arr2, n, m);
+        for (i = 0; i < n; i++) {
+            cout << arr1[i] << " ";
+        }
+        for (i = 0; i < m; i++) {
+            cout << arr2[i] << " ";
+        }
+        cout << "\n";
+    }
+    return 0;
+} 
